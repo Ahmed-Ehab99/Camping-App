@@ -5,13 +5,10 @@ import Image from "next/image";
 import Link from "next/link";
 import Button from "./Button";
 import { enablePageScroll, disablePageScroll } from "scroll-lock";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 const Navbar = () => {
   const [openNavigation, setOpenNavigation] = useState(false);
-  const [activeLink, setActiveLink] = useState(
-    () => window.location.hash.substring(1) || ""
-  );
   const toggleNavigation = () => {
     if (openNavigation) {
       setOpenNavigation(false);
@@ -22,41 +19,11 @@ const Navbar = () => {
     }
   };
 
-  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    const targetId = e.currentTarget.getAttribute("href")?.substring(1);
-    const targetElement = document.getElementById(targetId!);
-    if (targetElement) {
-      e.preventDefault();
-      targetElement.scrollIntoView({ behavior: "smooth" });
-    }
-    if (openNavigation) {
-      enablePageScroll();
-      setOpenNavigation(false);
-    }
-    setActiveLink(targetId || "");
+  const handleClick = () => {
+    if (!openNavigation) return;
+    enablePageScroll();
+    setOpenNavigation(false);
   };
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const sections = NAV_LINKS.map((link) =>
-        document.getElementById(link.href.substring(1))
-      );
-      const scrollPosition = window.scrollY + window.innerHeight / 2;
-      sections.forEach((section) => {
-        if (
-          section &&
-          section.offsetTop <= scrollPosition &&
-          section.offsetTop + section.offsetHeight > scrollPosition
-        ) {
-          setActiveLink(section.id);
-        }
-      });
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
 
   return (
     <nav className="flexBetween max-container padding-container relative z-30 pt-5">
