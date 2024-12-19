@@ -5,7 +5,7 @@ const Hero = () => {
   return (
     <section
       id="hero"
-      className="max-container padding-container flex flex-col gap-20 py-10 pb-32 2xl:gap-28 lg:py-20 xl:flex-row"
+      className="max-container padding-container flex flex-col gap-20 py-10 pb-32 2xl:gap-28 lg:py-20 xl:flex-row capitalize"
     >
       <div className="hero-map" />
       <div className="relative z-20 flex flex-1 flex-col xl:w-1/2">

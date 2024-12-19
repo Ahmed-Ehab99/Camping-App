@@ -3,7 +3,10 @@ import Button from "./Button";
 
 const GetApp = () => {
   return (
-    <section id="getApp" className="flexCenter w-full flex-col pb-[100px]">
+    <section
+      id="getApp"
+      className="flexCenter w-full flex-col pb-[100px] capitalize"
+    >
       <div className="get-app">
         <div className="z-20 flex w-full flex-1 flex-col items-start justify-center gap-12">
           <h2 className="xs:bold-32 md:bold-40 xl:bold-64 lg:bold-52 xl:max-w-[550px]">

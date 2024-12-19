@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 const Guide = () => {
   return (
-    <section id="guide" className="flexCenter flex-col pb-28">
+    <section id="guide" className="flexCenter flex-col pb-28 capitalize">
       <div className="w-full padding-container max-container pb-24">
         <Image
           src="/camp.svg"

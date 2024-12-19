@@ -16,7 +16,7 @@ const CampSite = ({
 }: CampProps) => {
   return (
     <div
-      className={`h-full w-full lg:min-w-[1000px] min-w-[500px] ${backGroundImage} bg-cover bg-no-repeat rounded-5xl`}
+      className={`h-full w-full lg:min-w-[1000px] min-w-[500px] ${backGroundImage} bg-cover bg-no-repeat rounded-5xl capitalize`}
     >
       <div className="flex h-full flex-col items-start justify-between p-6 lg:px-20 lg:py-10">
         <div className="flexCenter gap-4">
@@ -59,7 +59,7 @@ const Camp = () => {
   return (
     <section
       id="camp"
-      className="max-container padding-container relative flex flex-col py-10 mb-10 lg:py-20 xl:mb-20"
+      className="max-container capitalize padding-container relative flex flex-col py-10 mb-10 lg:py-20 xl:mb-20"
     >
       <div className="hide-scrollbar flex w-full items-start justify-start gap-8 overflow-x-auto xl:h-[600px] h-[400px]">
         <CampSite
